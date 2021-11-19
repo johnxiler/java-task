@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Main
 {
-
     public static void main(String[] args)
-    
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter your Fullname: ");
@@ -14,9 +12,10 @@ public class Main
         String str = in.nextLine();
        
         TreeMap<Character,Integer> tm = Pross(str);
-        System.out.println(tm);
-       
-        
+        System.out.println(tm); 
+        //for encryption
+         String en = encrypt(name);
+         System.out.println(en);
     }       
     public static TreeMap<Character,Integer> Pross(String str)
     {
@@ -39,4 +38,16 @@ public class Main
             return tm;
 
     }
+    //encrypting value
+public static String encrypt(String key) {
+String result = "";
+int l = key.length();
+char ch;
+for(int i = 0; i < l; i++){
+ch = key.charAt(i);
+ch += 10;
+result += ch;
+}
+return result;
+}
 }
