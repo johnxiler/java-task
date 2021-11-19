@@ -1,19 +1,17 @@
 import java.util.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 public class Main
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
        int count = 0;
        int spaceCount = 0;
        int wordCount = 0; 
-       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+       Scanner in = new Scanner(System.in);
         System.out.print("Enter your Fullname: ");
-        String name = in.readLine();
+        String name = in.nextLine();
         System.out.print("enter your favorite bible verse or motto: ");
-        String str = in.readLine();
+        String str = in.nextLine();
         System.out.println("------------------------------------------------");
         System.out.println("CHARACTER STATISTICS: ");
         TreeMap<Character,Integer> tm = Pross(str);
@@ -43,6 +41,7 @@ public class Main
         System.out.println("Characters count without spaces: "+ count);//output character without space 
         System.out.println("------------------------------------------------");
         System.out.println("Submitted by: " + name);
+        in.close(); 
     }       
     public static TreeMap<Character,Integer> Pross(String str)
     {
@@ -66,7 +65,9 @@ public class Main
                 }
             }
             return tm;//this is for my string statistics.
+             
     }
+    
     //encrypting value
 public static String encrypt(String key) {
 String result = "";
